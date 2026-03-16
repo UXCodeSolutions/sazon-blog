@@ -21,7 +21,7 @@ const getPreferredTheme = () => {
 const applyTheme = (theme) => {
   document.documentElement.setAttribute('data-theme', theme);
   if (themeToggle) themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-  if (themeIcon) themeIcon.textContent = theme === 'dark' ? '☀' : '☾';
+  if (themeIcon) themeIcon.textContent = theme === 'dark' ? 'Light' : 'Dark';
 };
 
 applyTheme(getPreferredTheme());
@@ -45,17 +45,61 @@ if (themeToggle) {
 const navToggle = qs('.nav-toggle');
 const navMobile = qs('#nav-mobile');
 
+const searchToggle = qs('.search-toggle');
+const headerSearchBar = qs('.site-header .search-bar');
+
 if (navToggle && navMobile) {
   navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
     navMobile.hidden = expanded;
+
+    if (!expanded && headerSearchBar) {
+      headerSearchBar.classList.remove('is-open');
+      if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
+    }
   });
   qsa('#nav-mobile a').forEach(a => {
     a.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
       navMobile.hidden = true;
     });
+  });
+}
+
+if (searchToggle && headerSearchBar) {
+  const closeSearch = () => {
+    headerSearchBar.classList.remove('is-open');
+    searchToggle.setAttribute('aria-expanded', 'false');
+  };
+
+  searchToggle.addEventListener('click', () => {
+    const isOpen = headerSearchBar.classList.contains('is-open');
+    if (isOpen) {
+      closeSearch();
+      return;
+    }
+
+    headerSearchBar.classList.add('is-open');
+    searchToggle.setAttribute('aria-expanded', 'true');
+
+    const input = qs('input', headerSearchBar);
+    if (input) input.focus();
+
+    if (navToggle && navMobile && !navMobile.hidden) {
+      navToggle.setAttribute('aria-expanded', 'false');
+      navMobile.hidden = true;
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!headerSearchBar.classList.contains('is-open')) return;
+    if (headerSearchBar.contains(e.target) || searchToggle.contains(e.target)) return;
+    closeSearch();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeSearch();
   });
 }
 
@@ -69,7 +113,7 @@ const updateAuthUI = async () => {
       const email = session.user.email;
       const name = email.split('@')[0];
       container.innerHTML = `
-        <span class="user-greeting">👋 ${name}</span>
+        <span class="user-greeting">${name}</span>
         <button class="btn-logout" onclick="handleLogout()">Logout</button>
       `;
     } else {
@@ -523,7 +567,7 @@ const initNewsletter = () => {
           throw error;
         }
       } else {
-        showFormMessage(form, '¡Suscripción exitosa! 🎉', false);
+        showFormMessage(form, '¡Suscripción exitosa!', false);
         emailInput.value = '';
       }
     } catch (err) {
@@ -559,7 +603,7 @@ const initContact = () => {
     try {
       const { error } = await supabaseClient.from('contacts').insert({ name, email, message });
       if (error) throw error;
-      showFormMessage(form, 'Message received! We\'ll get back to you soon. 🎉', false);
+      showFormMessage(form, 'Message received! We\'ll get back to you soon.', false);
       form.reset();
     } catch (err) {
       console.error('Contact error:', err);
