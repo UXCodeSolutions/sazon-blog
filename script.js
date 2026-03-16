@@ -62,10 +62,11 @@ if (navToggle && navMobile) {
       e.stopPropagation();
     }
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    navMobile.hidden = expanded;
+    const nextExpanded = !expanded;
+    navToggle.setAttribute('aria-expanded', String(nextExpanded));
+    navMobile.classList.toggle('is-open', nextExpanded);
 
-    if (!expanded && headerSearchBar) {
+    if (nextExpanded && headerSearchBar) {
       headerSearchBar.classList.remove('is-open');
       if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
     }
@@ -73,7 +74,7 @@ if (navToggle && navMobile) {
   qsa('#nav-mobile a').forEach(a => {
     a.addEventListener('click', () => {
       navToggle.setAttribute('aria-expanded', 'false');
-      navMobile.hidden = true;
+      navMobile.classList.remove('is-open');
     });
   });
 }
@@ -101,9 +102,9 @@ if (searchToggle && headerSearchBar) {
     const input = qs('input', headerSearchBar);
     if (input) input.focus();
 
-    if (navToggle && navMobile && !navMobile.hidden) {
+    if (navToggle && navMobile && navMobile.classList.contains('is-open')) {
       navToggle.setAttribute('aria-expanded', 'false');
-      navMobile.hidden = true;
+      navMobile.classList.remove('is-open');
     }
   });
 

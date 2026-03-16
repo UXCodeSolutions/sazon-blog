@@ -159,6 +159,8 @@ a:hover{color:var(--orange)}
   justify-content:center;
   cursor:pointer;
   font-size:16px;
+  pointer-events:auto;
+  touch-action: manipulation;
 }
 .icon-btn:hover{border-color:var(--orange); color:var(--orange);}
 .icon-btn:focus-visible{outline:2px solid var(--orange); outline-offset:2px;}
@@ -168,7 +170,7 @@ a:hover{color:var(--orange)}
   border-top:1px solid var(--border);
   background:var(--bg);
 }
-.nav-mobile:not([hidden]){display:block;}
+.nav-mobile.is-open{display:block;}
 .nav-mobile a{
   display:block;
   padding:14px 24px;
@@ -525,11 +527,13 @@ a:hover{color:var(--orange)}
     transform-origin: top;
     transform: translateY(-6px);
     opacity: 0;
-    transition: transform 200ms ease, opacity 200ms ease;
+    transition: transform 220ms ease, opacity 220ms ease;
+    pointer-events: none;
   }
-  .nav-mobile:not([hidden]){
+  .nav-mobile.is-open{
     transform: translateY(0);
     opacity: 1;
+    pointer-events: auto;
   }
   .grid-3, .grid-4x2{grid-template-columns:1fr;}
   .hero-card{padding:30px; min-height:400px;}
