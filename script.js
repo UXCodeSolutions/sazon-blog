@@ -86,6 +86,9 @@ const ensureMobileSearchPanel = () => {
     </div>
   `;
   document.body.appendChild(panel);
+
+  const bar = qs('.search-bar', panel);
+  if (bar) initSearch([bar]);
   return panel;
 };
 
@@ -524,12 +527,15 @@ const fetchAndRenderSinglePost = async (id) => {
 };
 
 // ======================== SEARCH ========================
-const initSearch = () => {
-  const searchBars = qsa('.search-bar');
+const initSearch = (bars) => {
+  const searchBars = Array.isArray(bars) && bars.length ? bars : qsa('.search-bar');
   
   searchBars.forEach(bar => {
     const input = qs('input', bar);
     if (!input) return;
+
+    if (bar.dataset.searchInit === 'true') return;
+    bar.dataset.searchInit = 'true';
 
     // Create dropdown container
     const dropdown = document.createElement('div');

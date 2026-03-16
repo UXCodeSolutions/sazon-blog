@@ -530,6 +530,8 @@ a:hover{color:var(--orange)}
 }
 
 @media (max-width: 768px){
+  body{overflow-x:hidden;}
+  .site-main{overflow-x:hidden;}
   .nav{display:none;}
   .header-actions .search-bar{display:none;}
   .header-mobile-actions{display:flex;}
@@ -560,11 +562,15 @@ a:hover{color:var(--orange)}
     opacity: 0;
     transition: transform 220ms ease, opacity 220ms ease;
     pointer-events: none;
+    display:block;
+    max-height:0;
+    overflow:hidden;
   }
   .nav-mobile.is-open{
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    max-height:240px;
   }
   .grid-3, .grid-4x2{grid-template-columns:1fr;}
   .hero-card{padding:30px; min-height:400px;}
