@@ -73,8 +73,8 @@ if (searchToggle && headerSearchBar) {
     searchToggle.setAttribute('aria-expanded', 'false');
   };
 
-  searchToggle.addEventListener('click', () => {
-    if (window.event) window.event.stopPropagation();
+  searchToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = headerSearchBar.classList.contains('is-open');
     if (isOpen) {
       closeSearch();

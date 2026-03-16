@@ -522,6 +522,14 @@ a:hover{color:var(--orange)}
     border-top:1px solid var(--border);
     box-shadow:var(--shadow);
     z-index:55;
+    transform-origin: top;
+    transform: translateY(-6px);
+    opacity: 0;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+  .nav-mobile:not([hidden]){
+    transform: translateY(0);
+    opacity: 1;
   }
   .grid-3, .grid-4x2{grid-template-columns:1fr;}
   .hero-card{padding:30px; min-height:400px;}
