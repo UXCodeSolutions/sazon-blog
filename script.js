@@ -51,13 +51,42 @@ const headerSearchBar = qs('.site-header .search-bar');
 const bindTap = (el, handler) => {
   if (!el) return;
   const opts = { passive: false };
-  const supportsPointer = typeof window !== 'undefined' && 'PointerEvent' in window;
-  if (supportsPointer) {
-    el.addEventListener('pointerdown', handler, opts);
-  } else {
-    el.addEventListener('touchstart', handler, opts);
-  }
-  el.addEventListener('click', handler);
+  let lastTouchTs = 0;
+
+  el.addEventListener('touchstart', (e) => {
+    lastTouchTs = Date.now();
+    handler(e);
+  }, opts);
+
+  el.addEventListener('click', (e) => {
+    if (Date.now() - lastTouchTs < 700) return;
+    handler(e);
+  });
+};
+
+const ensureMobileSearchPanel = () => {
+  let panel = qs('#mobile-search-panel');
+  if (panel) return panel;
+
+  panel = document.createElement('div');
+  panel.id = 'mobile-search-panel';
+  panel.className = 'mobile-search-panel';
+  panel.hidden = true;
+  panel.innerHTML = `
+    <div class="mobile-search-inner" role="dialog" aria-label="Search">
+      <div class="search-bar is-open">
+        <span class="search-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M21 21l-4.35-4.35"></path>
+          </svg>
+        </span>
+        <input type="text" placeholder="Search recipes..." />
+      </div>
+    </div>
+  `;
+  document.body.appendChild(panel);
+  return panel;
 };
 
 if (navToggle && navMobile) {
@@ -75,6 +104,9 @@ if (navToggle && navMobile) {
       headerSearchBar.classList.remove('is-open');
       if (searchToggle) searchToggle.setAttribute('aria-expanded', 'false');
     }
+
+    const mobilePanel = qs('#mobile-search-panel');
+    if (nextExpanded && mobilePanel) mobilePanel.hidden = true;
   });
   qsa('#nav-mobile a').forEach(a => {
     a.addEventListener('click', () => {
@@ -88,6 +120,8 @@ if (searchToggle && headerSearchBar) {
   const closeSearch = () => {
     headerSearchBar.classList.remove('is-open');
     searchToggle.setAttribute('aria-expanded', 'false');
+    const mobilePanel = qs('#mobile-search-panel');
+    if (mobilePanel) mobilePanel.hidden = true;
   };
 
   bindTap(searchToggle, (e) => {
@@ -95,6 +129,20 @@ if (searchToggle && headerSearchBar) {
       e.preventDefault();
       e.stopPropagation();
     }
+
+    const panel = ensureMobileSearchPanel();
+    const panelInput = qs('input', panel);
+    const panelIsOpen = !panel.hidden;
+
+    if (panelIsOpen) {
+      closeSearch();
+      return;
+    }
+
+    panel.hidden = false;
+    searchToggle.setAttribute('aria-expanded', 'true');
+    if (panelInput) panelInput.focus();
+
     const isOpen = headerSearchBar.classList.contains('is-open');
     if (isOpen) {
       closeSearch();

@@ -180,6 +180,22 @@ a:hover{color:var(--orange)}
 }
 .nav-mobile a.active{color:var(--orange)}
 .nav-mobile a:last-child{border-bottom:none;}
+.mobile-search-panel{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 80;
+}
+.mobile-search-inner{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--header-height);
+  padding: 12px 24px;
+}
+.mobile-search-inner .search-bar{
+  display:block;
+}
 .user-avatar img{
   width:36px;
   height:36px;
