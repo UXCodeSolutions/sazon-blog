@@ -50,8 +50,13 @@ const headerSearchBar = qs('.site-header .search-bar');
 
 const bindTap = (el, handler) => {
   if (!el) return;
-  el.addEventListener('pointerdown', handler, { passive: false });
-  el.addEventListener('touchstart', handler, { passive: false });
+  const opts = { passive: false };
+  const supportsPointer = typeof window !== 'undefined' && 'PointerEvent' in window;
+  if (supportsPointer) {
+    el.addEventListener('pointerdown', handler, opts);
+  } else {
+    el.addEventListener('touchstart', handler, opts);
+  }
   el.addEventListener('click', handler);
 };
 
