@@ -74,6 +74,7 @@ if (searchToggle && headerSearchBar) {
   };
 
   searchToggle.addEventListener('click', () => {
+    if (window.event) window.event.stopPropagation();
     const isOpen = headerSearchBar.classList.contains('is-open');
     if (isOpen) {
       closeSearch();
