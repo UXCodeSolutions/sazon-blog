@@ -48,8 +48,19 @@ const navMobile = qs('#nav-mobile');
 const searchToggle = qs('.search-toggle');
 const headerSearchBar = qs('.site-header .search-bar');
 
+const bindTap = (el, handler) => {
+  if (!el) return;
+  el.addEventListener('pointerdown', handler, { passive: false });
+  el.addEventListener('touchstart', handler, { passive: false });
+  el.addEventListener('click', handler);
+};
+
 if (navToggle && navMobile) {
-  navToggle.addEventListener('click', () => {
+  bindTap(navToggle, (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
     navToggle.setAttribute('aria-expanded', String(!expanded));
     navMobile.hidden = expanded;
@@ -73,8 +84,11 @@ if (searchToggle && headerSearchBar) {
     searchToggle.setAttribute('aria-expanded', 'false');
   };
 
-  searchToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
+  bindTap(searchToggle, (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     const isOpen = headerSearchBar.classList.contains('is-open');
     if (isOpen) {
       closeSearch();
