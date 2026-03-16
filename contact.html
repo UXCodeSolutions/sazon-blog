@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sazón Blog - Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">🍃</div>
+        <a href="index.html" class="brand-name">Sazón Blog</a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Recipes</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search recipes..." />
+        </div>
+        <div class="auth-actions">
+          <a href="login.html" class="header-login">Log In</a>
+          <a href="register.html" class="btn-primary btn-sm">Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <div class="container contact-container">
+      <div class="contact-info">
+        <h1>Get in Touch</h1>
+        <p>Have a recipe to share, a question, or a collaboration idea? We'd love to hear from you.</p>
+        <div class="contact-details">
+          <div class="detail-item">
+            <span class="detail-icon">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <p>hello@sazon.blog</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">🕐</span>
+            <div>
+              <strong>Response Time</strong>
+              <p>We reply within 24-48 hours</p>
+            </div>
+          </div>
+          <div class="detail-item">
+            <span class="detail-icon">📍</span>
+            <div>
+              <strong>Social</strong>
+              <p>@SazonBlog on all platforms</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" type="text" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" rows="5" placeholder="Tell us what's cooking..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="brand">
+          <div class="brand-icon">🍃</div>
+          <span class="brand-name">Sazón Blog</span>
+        </div>
+        <p class="muted">El sabor de cada día</p>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Sazón. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

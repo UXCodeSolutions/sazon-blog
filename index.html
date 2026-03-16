@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sazón Blog</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">🍃</div>
+        <a href="index.html" class="brand-name">Sazón Blog</a>
+      </div>
+      
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="categories.html">Recipes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search recipes..." />
+        </div>
+        <div class="auth-actions">
+          <a href="login.html" class="header-login">Log In</a>
+          <a href="register.html" class="btn-primary btn-sm">Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="site-main">
+    <section class="hero-slider-section">
+      <div class="hero-slider">
+        <!-- Fetched dynamically from JS -->
+      </div>
+    </section>
+
+    <!-- AD PLACEHOLDER -->
+    <div class="container ad-placeholder" style="margin-bottom: 40px;">
+      <span class="ad-text">[Ad Space - Top Banner]</span>
+    </div>
+
+    <!-- EDITOR'S SELECTION -->
+    <section class="section editors-selection">
+      <div class="container">
+        <div class="section-header">
+          <h2>Editor's Selection</h2>
+          <a href="categories.html" class="view-all">View All Featured ></a>
+        </div>
+        
+        <div class="grid-3">
+          <!-- Dynamically filled -->
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRA-SECTION BANNER -->
+    <section class="banner-section">
+      <div class="container">
+        <div class="promo-banner">
+          <div class="promo-content">
+            <h2>Master the Art of the<br/>Perfect Sear</h2>
+            <a href="categories.html" class="btn-white">Learn Technique ></a>
+          </div>
+          <div class="promo-img" style="background-image:url('https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800')"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AD PLACEHOLDER -->
+    <div class="container ad-placeholder" style="margin-top: 40px;">
+      <span class="ad-text">[Ad Space - In Feed]</span>
+    </div>
+
+    <!-- FRESH FROM THE KITCHEN -->
+    <section class="section fresh-kitchen">
+      <div class="container">
+        <div class="section-header">
+          <h2>Fresh from the Kitchen</h2>
+          <div class="filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Breakfast</button>
+            <button class="filter-btn">Dinner</button>
+            <button class="filter-btn">Sides</button>
+          </div>
+        </div>
+        
+        <div class="grid-4x2">
+          <!-- Dynamically filled -->
+        </div>
+        
+        <div class="text-center" style="margin-top:40px;">
+          <a href="categories.html" class="btn-outline">View All Recipes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER / COMMUNITY -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-split">
+          <div class="newsletter-content">
+            <h2>Get Flavorful Inspiration<br/>In Your Inbox</h2>
+            <p>Join our community of home cooks and get access to exclusive recipes, tips, and weekly meal plans.</p>
+            <form class="subscribe-form">
+              <input type="email" placeholder="Your email address" required />
+              <button class="btn-primary" type="submit">Subscribe Now</button>
+            </form>
+          </div>
+          <div class="newsletter-illustration" style="background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=600')"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="brand">
+          <div class="brand-icon">🍃</div>
+          <span class="brand-name">Sazón Blog</span>
+        </div>
+        <p class="muted">El sabor de cada día</p>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Sazón. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sazón Blog - Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon">🍃</div>
+        <a href="index.html" class="brand-name">Sazón Blog</a>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="categories.html" class="active">Recipes</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search recipes..." />
+        </div>
+        <div class="auth-actions">
+          <a href="login.html" class="header-login">Log In</a>
+          <a href="register.html" class="btn-primary btn-sm">Join</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="section">
+      <div class="container">
+        <div class="categories-header">
+          <h1 id="categories-title">All Recipes</h1>
+          <p id="categories-subtitle" class="categories-subtitle">Browse our collection of delicious recipes</p>
+        </div>
+
+        <div id="category-chips" class="category-chips">
+          <!-- Dynamically filled -->
+        </div>
+
+        <div id="categories-grid" class="grid-3">
+          <div style="grid-column:1/-1; text-align:center; padding:60px 0; color:var(--muted);">Loading recipes...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div class="brand">
+          <div class="brand-icon">🍃</div>
+          <span class="brand-name">Sazón Blog</span>
+        </div>
+        <p class="muted">El sabor de cada día</p>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Sazón. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
