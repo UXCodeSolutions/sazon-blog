@@ -375,59 +375,59 @@ const bindFilters = () => {
 // Fallback static articles when Supabase is empty
 const fallbackArticles = [
   {
-    id: 'f1', title: 'Risotto de Hongos Silvestres con Parmesano', category: 'Dinner',
+    id: 'f1', title: 'Wild Mushroom Risotto with Parmesan', category: 'Dinner',
     time: '45 mins', difficulty: 'Advanced', rating_stars: '★★★★★',
     image_url: 'https://images.unsplash.com/photo-1476124369491-e7addf5db371?q=80&w=1200',
-    explanation: 'Un clásico italiano que combina la cremosidad del arroz arborio con el sabor profundo de hongos frescos y parmesano reggiano.<br><br><b>Ingredientes principales:</b><br>• 300g de arroz Arborio<br>• 250g de hongos silvestres mixtos<br>• 1 litro de caldo de verduras caliente<br>• 100g de queso Parmesano rallado<br>• 1 cebolla picada finamente<br><br><b>Instrucciones paso a paso:</b><br><br><i>Paso 1:</i> Saltea la cebolla en aceite de oliva y mantequilla hasta que esté transparente. Agrega los hongos y cocina hasta que suelten su jugo.<br><br><i>Paso 2:</i> Incorpora el arroz Arborio y tuesta durante 2 minutos revolviendo constantemente. Agrega un chorrito de vino blanco y deja evaporar.<br><br><i>Paso 3:</i> Comienza a agregar el caldo de verduras caliente, un cucharón a la vez, revolviendo sin parar y esperando a que se absorba antes de agregar el siguiente.<br><br><i>Paso 4:</i> Cuando el arroz esté al dente, retira del fuego. Incorpora el queso Parmesano, sal, pimienta y una cucharada de mantequilla fría. Cubre y deja reposar 2 minutos antes de servir.<br><br><b>Consejo del Chef:</b> El secreto para un risotto perfecto es la paciencia al agregar el caldo y mantener el líquido caliente para no cortar la cocción del arroz.'
+    explanation: 'A classic Italian dish that combines the creaminess of arborio rice with the deep flavor of fresh mushrooms and Parmigiano Reggiano.<br><br><b>Main Ingredients:</b><br>• 300g Arborio rice<br>• 250g mixed wild mushrooms<br>• 1 liter hot vegetable broth<br>• 100g grated Parmesan cheese<br>• 1 finely chopped onion<br><br><b>Step-by-Step Instructions:</b><br><br><i>Step 1:</i> Sauté the onion in olive oil and butter until translucent. Add the mushrooms and cook until they release their juices.<br><br><i>Step 2:</i> Add the Arborio rice and toast for 2 minutes, stirring constantly. Add a splash of white wine and let it evaporate.<br><br><i>Step 3:</i> Begin adding the hot vegetable broth one ladle at a time, stirring continuously and waiting for each addition to be absorbed before adding the next.<br><br><i>Step 4:</i> When the rice is al dente, remove from heat. Stir in the Parmesan cheese, salt, pepper and a tablespoon of cold butter. Cover and let rest 2 minutes before serving.<br><br><b>Chef\'s Tip:</b> The secret to perfect risotto is patience when adding the broth and keeping the liquid hot so it doesn\'t interrupt the rice\'s cooking process.'
   },
   {
-    id: 'f2', title: 'Tacos al Pastor con Piña Asada', category: 'Dinner',
+    id: 'f2', title: 'Tacos al Pastor with Grilled Pineapple', category: 'Dinner',
     time: '60 mins', difficulty: 'Medium', rating_stars: '★★★★★',
     image_url: 'https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=1200',
-    explanation: 'La receta tradicional mexicana con cerdo marinado en achiote, chiles y especias, coronado con piña caramelizada.<br><br><b>Ingredientes principales:</b><br>• 1 kg de lomo o pierna de cerdo en filetes finos<br>• 100g de pasta de achiote<br>• 3 chiles guajillo y 2 chiles pasilla (secos y desvenados)<br>• 1/2 taza de vinagre blanco<br>• 1/2 piña natural en rebanadas<br>• Tortillas de maíz, cilantro y cebolla<br><br><b>Instrucciones paso a paso:</b><br><br><i>Paso 1:</i> Hierve los chiles en agua hasta que ablanden. Licúalos con el achiote, vinagre, ajo, sal y especias hasta formar un adobo espeso.<br><br><i>Paso 2:</i> Marina los filetes de cerdo en esta mezcla durante al menos 4 horas (idealmente toda la noche en el refrigerador).<br><br><i>Paso 3:</i> En un sartén caliente o parrilla, asa la carne filete por filete hasta que esté dorada y ligeramente chamuscada en los bordes. Asa también las rebanadas de piña.<br><br><i>Paso 4:</i> Pica la carne y la piña. Sirve sobre tortillas calientes y decora con cebolla picada y cilantro fresco.<br><br><b>Consejo del Chef:</b> Si no tienes un trompo (el asador vertical tradicional), apilar los filetes marinados y hornearlos lentamente antes de dorarlos en la sartén da un resultado muy similar.'
+    explanation: 'The traditional Mexican recipe with pork marinated in achiote, chilies and spices, topped with caramelized pineapple.<br><br><b>Main Ingredients:</b><br>• 1 kg pork loin or leg, thinly sliced<br>• 100g achiote paste<br>• 3 guajillo and 2 pasilla chilies (dried and deseeded)<br>• 1/2 cup white vinegar<br>• 1/2 fresh pineapple, sliced<br>• Corn tortillas, cilantro and onion<br><br><b>Step-by-Step Instructions:</b><br><br><i>Step 1:</i> Boil the chilies in water until soft. Blend with achiote, vinegar, garlic, salt and spices into a thick paste.<br><br><i>Step 2:</i> Marinate the pork slices in the mixture for at least 4 hours (ideally overnight in the refrigerator).<br><br><i>Step 3:</i> On a hot skillet or grill, cook the meat slice by slice until golden and slightly charred on the edges. Also grill the pineapple slices.<br><br><i>Step 4:</i> Chop the meat and pineapple. Serve on warm tortillas and garnish with diced onion and fresh cilantro.<br><br><b>Chef\'s Tip:</b> If you don\'t have a trompo (the traditional vertical spit), stacking the marinated slices and slow-roasting them before searing in a pan gives a very similar result.'
   },
   {
-    id: 'f3', title: 'Bowl de Açaí con Granola Artesanal', category: 'Breakfast',
+    id: 'f3', title: 'Açaí Bowl with Homemade Granola', category: 'Breakfast',
     time: '15 mins', difficulty: 'Easy', rating_stars: '★★★★☆',
     image_url: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?q=80&w=1200',
-    explanation: 'Un desayuno energético y refrescante con açaí brasileño, frutas frescas y granola crujiente hecha en casa.<br><br><b>Ingredientes principales:</b><br>• 2 paquetes (100g c/u) de puré de açaí congelado sin azúcar<br>• 1 plátano congelado<br>• 1/2 taza de leche de almendras o jugo de manzana<br>• Granola artesanal al gusto<br>• Fresas, arándanos y rodajas de plátano fresco<br>• Miel o jarabe de agave (opcional)<br><br><b>Instrucciones paso a paso:</b><br><br><i>Paso 1:</i> Saca los paquetes de açaí del congelador 5 minutos antes para que se ablanden un poco. Rómpelos en trozos y ponlos en la licuadora.<br><br><i>Paso 2:</i> Agrega el plátano congelado y un chorrito de leche de almendras. Licúa a baja velocidad usando el tamper de la licuadora para empujar hacia las cuchillas, buscando una textura de helado espeso.<br><br><i>Paso 3:</i> Sirve la mezcla gruesa inmediatamente en un bowl frío.<br><br><i>Paso 4:</i> Decora en filas ordenadas: una fila de granola crujiente, seguida de rodajas de plátano, fresas y arándanos. Rocía con un poco de miel si deseas dulzor extra.<br><br><b>Consejo del Chef:</b> El secreto de un buen bowl es usar poca cantidad de líquido al licuar. Si te pasas, será un smoothie para beber en lugar de comer con cuchara.'
+    explanation: 'An energizing and refreshing breakfast with Brazilian açaí, fresh fruits and crunchy homemade granola.<br><br><b>Main Ingredients:</b><br>• 2 packets (100g each) unsweetened frozen açaí purée<br>• 1 frozen banana<br>• 1/2 cup almond milk or apple juice<br>• Homemade granola to taste<br>• Strawberries, blueberries and fresh banana slices<br>• Honey or agave syrup (optional)<br><br><b>Step-by-Step Instructions:</b><br><br><i>Step 1:</i> Remove the açaí packets from the freezer 5 minutes ahead to soften slightly. Break into pieces and add to the blender.<br><br><i>Step 2:</i> Add the frozen banana and a splash of almond milk. Blend on low speed, using the blender tamper to push ingredients toward the blades, aiming for a thick ice cream-like texture.<br><br><i>Step 3:</i> Serve the thick mixture immediately into a chilled bowl.<br><br><i>Step 4:</i> Arrange toppings in neat rows: a row of crunchy granola, followed by banana slices, strawberries and blueberries. Drizzle with a bit of honey for extra sweetness.<br><br><b>Chef\'s Tip:</b> The secret to a good bowl is using minimal liquid when blending. Too much and it becomes a drinkable smoothie instead of a spoonable bowl.'
   },
   {
-    id: 'f4', title: 'Salmón Glaseado con Miso y Jengibre', category: 'Dinner',
+    id: 'f4', title: 'Miso-Ginger Glazed Salmon', category: 'Dinner',
     time: '35 mins', difficulty: 'Medium', rating_stars: '★★★★★',
     image_url: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1200',
-    explanation: 'Filetes de salmón bañados en una salsa umami de miso blanco, mirin y jengibre fresco, horneados a la perfección.'
+    explanation: 'Salmon fillets coated in an umami-rich white miso, mirin and fresh ginger glaze, baked to perfection.'
   },
   {
-    id: 'f5', title: 'Pasta Carbonara Auténtica Romana', category: 'Dinner',
+    id: 'f5', title: 'Authentic Roman Pasta Carbonara', category: 'Dinner',
     time: '25 mins', difficulty: 'Medium', rating_stars: '★★★★★',
     image_url: 'https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=1200',
-    explanation: 'La receta original sin crema: guanciale crujiente, pecorino romano, yemas de huevo y pimienta negra.'
+    explanation: 'The original recipe without cream: crispy guanciale, pecorino romano, egg yolks and black pepper.'
   },
   {
-    id: 'f6', title: 'Ensalada Mediterránea con Quinoa', category: 'Sides',
+    id: 'f6', title: 'Mediterranean Quinoa Salad', category: 'Sides',
     time: '20 mins', difficulty: 'Easy', rating_stars: '★★★★☆',
     image_url: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1200',
-    explanation: 'Quinoa cocida con tomates cherry, pepino, aceitunas kalamata, queso feta y un aderezo de limón y hierbas.'
+    explanation: 'Cooked quinoa with cherry tomatoes, cucumber, kalamata olives, feta cheese and a lemon-herb dressing.'
   },
   {
-    id: 'f7', title: 'Pancakes Japoneses Soufflé', category: 'Breakfast',
+    id: 'f7', title: 'Japanese Soufflé Pancakes', category: 'Breakfast',
     time: '30 mins', difficulty: 'Advanced', rating_stars: '★★★★★',
     image_url: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1200',
-    explanation: 'Los famosos pancakes esponjosos japoneses, hechos con merengue batido para lograr esa textura de nube irresistible.'
+    explanation: 'The famous fluffy Japanese pancakes, made with whipped meringue to achieve that irresistible cloud-like texture.'
   },
   {
-    id: 'f8', title: 'Guacamole Clásico con Totopos', category: 'Sides',
+    id: 'f8', title: 'Classic Guacamole with Tortilla Chips', category: 'Sides',
     time: '10 mins', difficulty: 'Easy', rating_stars: '★★★★☆',
     image_url: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1200',
-    explanation: 'Aguacate maduro con cilantro fresco, cebolla roja, jalapeño, jugo de limón y sal de mar.'
+    explanation: 'Ripe avocado with fresh cilantro, red onion, jalapeño, lime juice and sea salt.'
   },
 ];
 
 const fetchAndRenderPosts = async () => {
   console.log('[DEBUG] fetchAndRenderPosts started');
   try {
-    const { data, error } = await supabase
+    const { data, error } = await supabaseClient
       .from('posts')
       .select('*')
       .order('id', { ascending: false });
@@ -499,21 +499,19 @@ const fetchAndRenderSinglePost = async (id) => {
       
       <div class="article-layout-grid">
         <aside class="article-sidebar sidebar-left">
-          <div class="ad-skyscraper">Espacio Publicitario</div>
         </aside>
         
         <div class="article-main-content">
           <div class="article-content" style="font-size: 18px; line-height: 1.8; color: var(--text);">
-            ${explanation ? explanation.replace(/\\n/g, '<br>') : '<p>Receta en preparación.</p>'}
+            ${explanation ? explanation.replace(/\\n/g, '<br>') : '<p>Recipe coming soon.</p>'}
           </div>
           
           <div style="text-align:center; margin-top: 60px; padding-top: 30px; border-top: 1px solid var(--border);">
-            <a href="index.html" style="color: var(--orange); font-weight: 600; font-size: 16px;">← Volver al inicio</a>
+            <a href="index.html" style="color: var(--orange); font-weight: 600; font-size: 16px;">← Back to Home</a>
           </div>
         </div>
         
         <aside class="article-sidebar sidebar-right">
-          <div class="ad-skyscraper">Espacio Publicitario</div>
         </aside>
       </div>
     `;
@@ -546,7 +544,7 @@ const initSearch = (bars) => {
 
     const renderResults = (results) => {
       if (results.length === 0) {
-        dropdown.innerHTML = '<div class="search-no-results">No se encontraron recetas.</div>';
+        dropdown.innerHTML = '<div class="search-no-results">No recipes found.</div>';
       } else {
         dropdown.innerHTML = results.slice(0, 5).map(article => `
           <a href="article.html?id=${article.id}" class="search-result-item">
@@ -571,7 +569,7 @@ const initSearch = (bars) => {
         return;
       }
 
-      dropdown.innerHTML = '<div class="search-no-results">Buscando...</div>';
+      dropdown.innerHTML = '<div class="search-no-results">Searching...</div>';
       dropdown.classList.add('active');
 
       debounceTimer = setTimeout(async () => {
@@ -637,17 +635,17 @@ const initNewsletter = () => {
       
       if (error) {
         if (error.code === '23505') {
-          showFormMessage(form, '¡Ya estás suscrito!', false);
+          showFormMessage(form, 'You are already subscribed!', false);
         } else {
           throw error;
         }
       } else {
-        showFormMessage(form, '¡Suscripción exitosa!', false);
+        showFormMessage(form, 'Successfully subscribed!', false);
         emailInput.value = '';
       }
     } catch (err) {
       console.error('Newsletter error:', err);
-      showFormMessage(form, 'Error al suscribir. Intenta de nuevo.', true);
+      showFormMessage(form, 'Error subscribing. Please try again.', true);
     } finally {
       btn.disabled = false;
       btn.textContent = 'Subscribe Now';
