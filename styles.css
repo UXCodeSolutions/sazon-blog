@@ -23,6 +23,10 @@ html[data-theme="dark"]{
 }
 
 *{box-sizing:border-box}
+img, video, iframe, svg {
+  max-width: 100%;
+  height: auto;
+}
 body{
   margin:0;
   background:var(--bg);
@@ -306,7 +310,7 @@ a:hover{color:var(--orange)}
 /* EDITOR'S SELECTION GRID */
 .grid-3{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
   gap:30px;
 }
 .recipe-card{
@@ -414,7 +418,7 @@ a:hover{color:var(--orange)}
 
 .grid-4x2{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
   gap:24px;
 }
 .compact-card{
